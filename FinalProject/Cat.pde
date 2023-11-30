@@ -1,5 +1,10 @@
 class cat {
   
+  float catEyeX = constrain(mouseX, 270, 290);
+  float catEyeY = constrain(mouseY, 200, 220);
+  float catEyeX2 = constrain(mouseX, 305, 325);
+  float catEyeY2 = constrain(mouseY, 215, 235);
+  
   void display(){
     fill(0);
     circle(300, 210, 100);
@@ -15,5 +20,9 @@ class cat {
     fill(250);
     circle(280, 210, 30);
     circle(315, 225, 30);
+    
+    fill(0);
+    circle(catEyeX, catEyeY, 20);
+    circle(catEyeX2, catEyeY2, 20);
   }
 }
