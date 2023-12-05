@@ -24,5 +24,8 @@ class cat {
     fill(0);
     circle(catEyeX, catEyeY, 20);
     circle(catEyeX2, catEyeY2, 20);
+    stroke(0);
+    strokeWeight(15);
+    curve(100, 600, 70, 270, 100, 180, -10, 30);
   }
 }
