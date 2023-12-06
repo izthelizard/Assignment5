@@ -1,9 +1,20 @@
 cauldren c1;
 cat cat1;
+potions p1;
+
+potions[] potions = new potions[1];
 
 void setup(){
   size(400, 400);
   rectMode(CORNER);
+  
+    c1 = new cauldren();
+  cat1 = new cat();
+  p1 = new potions();
+  
+  for (int i = 0; i < potions.length; i++) {
+    potions[i] = new potions();
+  }
 }
 
 void draw(){
@@ -21,12 +32,15 @@ void draw(){
   noStroke();
 
   
-  c1 = new cauldren();
-  cat1 = new cat();
+
   
   cat1.display();
   c1.display();
+ 
   
-  
+  for (int i = 0; i < potions.length; i++) {
+    potions[i].display();
+    potions[i].update();
+  }
   
 }
