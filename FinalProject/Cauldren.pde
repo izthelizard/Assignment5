@@ -4,13 +4,13 @@ class cauldren {
   rectMode(CORNER);
   noStroke();
   
-  fill(0);
+  fill(45, 49, 54);
   rect(50, 300, 300, 400);
   
-  fill(150);
+  fill(32, 32, 33);
   ellipse(200, 300, 300, 150);
   
-  fill(100);
+  fill(161, 218, 234);
   ellipse(200, 310, 280, 130);
   
   fill(0);

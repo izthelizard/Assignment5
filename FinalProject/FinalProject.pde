@@ -7,7 +7,19 @@ void setup(){
 }
 
 void draw(){
-  background(255);
+  background(95, 77, 63);
+  fill(59, 46, 32);
+  rect(0, 90, 400, 15);
+  rect(0, 120, 400, 5);
+  stroke(59, 46, 32);
+  strokeWeight(5);
+  line(100, 100, 0, 0);
+  line(400, 0, 300, 100);
+  strokeWeight(3);
+  line(90, 100, 0, 10);
+  line(400, 10, 310, 100);
+  noStroke();
+
   
   c1 = new cauldren();
   cat1 = new cat();
