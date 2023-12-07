@@ -1,19 +1,29 @@
+//objects
 cauldren c1;
 cat cat1;
 potions p1;
+bubbles b1;
+orangePotion op1;
+greenPotion gp1;
+purplePotion pp1;
 
-potions[] potions = new potions[1];
+//array for bubbles
+bubbles[] bubbles = new bubbles[8];
 
 void setup(){
   size(400, 400);
   rectMode(CORNER);
   
+  //initalize classes
     c1 = new cauldren();
   cat1 = new cat();
   p1 = new potions();
-  
-  for (int i = 0; i < potions.length; i++) {
-    potions[i] = new potions();
+  op1 = new orangePotion();
+  gp1 = new greenPotion();
+  pp1 = new purplePotion();
+  //initialize the smoke bubbles array
+  for (int i = 0; i < bubbles.length; i++) {
+    bubbles[i] = new bubbles();
   }
 }
 
@@ -33,14 +43,24 @@ void draw(){
 
   
 
-  
+  //display objects
   cat1.display();
   c1.display();
+  p1.display();
+  op1.display();
+  gp1.display();
+  pp1.display();
  
-  
-  for (int i = 0; i < potions.length; i++) {
-    potions[i].display();
-    potions[i].update();
+  // draw and updates the smoke bubbles
+  for (int i = 0; i < bubbles.length; i++) {
+    bubbles[i].display();
+    bubbles[i].update();
   }
   
 }
+//wip clicking
+void mousePressed() {
+ 
+
+  
+  }

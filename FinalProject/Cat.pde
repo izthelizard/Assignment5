@@ -1,5 +1,5 @@
 class cat {
-  
+  //have it so eyes follow the mouse but stay in a little area
   float catEyeX = constrain(mouseX, 270, 290);
   float catEyeY = constrain(mouseY, 200, 220);
   float catEyeX2 = constrain(mouseX, 305, 325);
@@ -20,7 +20,7 @@ class cat {
     fill(250);
     circle(280, 210, 30);
     circle(315, 225, 30);
-    
+    //eyes
     fill(0);
     circle(catEyeX, catEyeY, 20);
     circle(catEyeX2, catEyeY2, 20);
