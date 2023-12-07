@@ -6,6 +6,7 @@ bubbles b1;
 orangePotion op1;
 greenPotion gp1;
 purplePotion pp1;
+gameOver gOver;
 
 //array for bubbles
 bubbles[] bubbles = new bubbles[8];
@@ -21,6 +22,7 @@ void setup(){
   op1 = new orangePotion();
   gp1 = new greenPotion();
   pp1 = new purplePotion();
+  gOver = new gameOver();
   //initialize the smoke bubbles array
   for (int i = 0; i < bubbles.length; i++) {
     bubbles[i] = new bubbles();
