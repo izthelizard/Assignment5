@@ -64,6 +64,7 @@ void mousePressed() {
   if (mousePressed) {
     if (mouseX >= 35 && mouseY >= 50 && mouseX <= 80 && mouseY <=90)
     c1.potionMixture = 1;
+    printArray("Keep mixing nyan~~");
   }
   
   }
