@@ -21,13 +21,13 @@ class gameOver {
     fill(0);
     circle(300, 210, 100);
     fill(0);
-    triangle(251, 200, 270, 130, 310, 161);
+    triangle(251, 200, 285, 115, 310, 161);
     fill(247, 170, 170);
-    triangle(260, 180, 272, 140, 300, 160);
+    triangle(265, 180, 285, 125, 300, 160);
     fill(0);
-    triangle(330, 171, 380, 180, 340, 239);
+    triangle(330, 171, 380, 145, 340, 239);
     fill(247, 170, 170);
-    triangle(338, 177, 372, 185, 350, 215);
+    triangle(338, 177, 373, 155, 345, 215);
     
     stroke(250);
     strokeWeight(5);
@@ -39,8 +39,8 @@ class gameOver {
     fill(0);
     
     stroke(0);
-    strokeWeight(15);
-    curve(100, 600, 70, 270, 100, 180, -10, 30);
+    strokeWeight(30);
+    line(130, 270, 70, 180);
     noStroke();
     
      //cauldren
@@ -71,6 +71,52 @@ class gameOver {
     fill(132, 62, 180);
     triangle(315, 90, 365, 90, 340, 45);
     quad(350, 65, 355, 80, 368, 70, 360, 60);
+    
+    //cloud of smoke
+    fill(77, 77, 77, 50);
+    circle(100, 100, 150);
+    circle(300, 320, 150);
+    circle(80, 210, 150);
+    circle( 280, 100, 180);
+    circle( 200, 160, 200);
+    circle( 80, 300, 120);
+    circle( 170, 295, 200);
+    circle( 330, 210, 120);
+    circle( 270, 250, 70);
+    circle(170, 45, 80);
+    
+    circle(100, 100, 140);
+    circle(300, 320, 140);
+    circle(80, 210, 140);
+    circle( 280, 100, 170);
+    circle( 200, 160, 190);
+    circle( 80, 300, 110);
+    circle( 170, 295, 190);
+    circle( 330, 210, 110);
+    circle( 270, 250, 60);
+    circle(170, 45, 70);
+    
+    circle(100, 100, 110);
+    circle(300, 320, 110);
+    circle(80, 210, 110);
+    circle( 280, 100, 140);
+    circle( 200, 160, 160);
+    circle( 80, 300, 80);
+    circle( 170, 295, 160);
+    circle( 330, 210, 80);
+    circle( 270, 250, 40);
+    circle(170, 45, 50);
+    
+    circle(100, 100, 60);
+    circle(300, 320, 60);
+    circle(80, 210, 60);
+    circle( 280, 100, 190);
+    circle( 200, 160, 110);
+    circle( 80, 300, 30);
+    circle( 170, 295, 110);
+    circle( 330, 210, 30);
+    circle( 270, 250, 20);
+    circle(170, 45, 20);
   }
   
 }

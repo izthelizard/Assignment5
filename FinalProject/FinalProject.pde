@@ -59,6 +59,8 @@ void draw(){
     bubbles[i].update();
   }
   
+  
+  
 }
 //wip clicking
 void mousePressed() {
