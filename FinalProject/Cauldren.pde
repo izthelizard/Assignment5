@@ -27,6 +27,8 @@ class cauldren {
     fill(green);
   } else if (potionMixture == 3) {
     fill(purple);
+  } else if (potionMixture == 4) {
+    fill(orange);
   }
   ellipse(200, 310, 280, 130);
   
