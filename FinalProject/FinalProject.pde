@@ -8,6 +8,7 @@ greenPotion gp1;
 purplePotion pp1;
 
 boolean clickedPoison = false;
+boolean gameStart = true;
 
 
 //array for bubbles
@@ -61,6 +62,10 @@ void draw(){
     bubbles[i].update();
   }
   
+  if (gameStart == true) {
+    gameStartScreen();
+  }
+  
   if (clickedPoison == true){
     gameOverScreen();
   }
@@ -70,7 +75,7 @@ void mousePressed(){
     if (mouseX > 35 && mouseY > 50 && mouseX < 80 && mouseY <90) {
     c1.potionMixture = 1;
     printArray("Keep mixing nyan~~");
-    } else if (mouseX > 140 && mouseY > 65 && mouseX < 150 && mouseY < 90) {
+    } else if (mouseX > 130 && mouseY > 65 && mouseX < 155 && mouseY < 90) {
       clickedPoison = true;
       printArray("oh no nyan!");
       } else if (mouseX > 220 && mouseY > 60 && mouseX < 270 && mouseY < 90) {
@@ -87,8 +92,71 @@ void mouseClicked() {
     if (mouseX > 150 && mouseY >230 && mouseX < 250 && mouseY < 320) {
       clickedPoison = false;
       c1.potionMixture = 0;
-    }
+    } 
   }
+    if (gameStart == true) {
+      if (mouseX > 60 && mouseY > 220 && mouseX < 210 && mouseY < 290) {
+        gameStart = false;
+      }
+    }
+  
+}
+
+void gameStartScreen(){
+  rectMode(CORNER);
+   noStroke();
+   background(72, 57, 45);
+   fill(0);
+   circle(310, 280, 80);
+   ellipse(310, 390, 80, 180);
+   triangle(330, 250, 270, 220, 270, 275);
+   triangle(330, 245, 375, 245, 349, 290);
+   fill(255, 206, 229);
+   triangle(310, 245, 275, 227, 275, 265);
+   triangle(350, 250, 368, 250, 350, 280);
+   fill(255);
+   circle(295, 280, 25);
+   circle(325, 287, 25);
+   fill(0);
+   circle(295, 280, 20);
+   circle(325, 287, 20);
+   fill(130, 99, 147);
+   quad(265, 250, 355, 290, 355, 190, 345, 170);
+   triangle(355, 210, 380, 230, 345, 170);
+   stroke(130, 99, 147);
+   strokeWeight(4);
+   line(250, 245, 370, 295);
+   stroke(255);
+   strokeWeight(1);
+   line(280, 295, 255, 290);
+   line(283, 300, 260, 302);
+   line(335, 300, 360, 298);
+   line(333, 305, 355, 310);
+   line(295, 300, 300, 305);
+   line(300, 305, 305, 300);
+   line(305, 300, 310, 305);
+   line(310, 305, 315, 300);
+   
+   noFill();
+   stroke(0);
+    strokeWeight(15);
+    curve(600, 100, 270, 390, 230, 300, -30, 500);
+   
+   noStroke();
+   
+   textSize(80);
+   fill(255);
+   text("MIXING", 75, 100);
+   text("POTIONS", 40, 170);
+   
+   fill(255);
+   rect(55, 215, 160, 80);
+   fill(130, 99, 147);
+   rect(60, 220, 150, 70);
+   textSize(40);
+   fill(255);
+   text("START", 80, 270);
+   
 }
 
 void gameOverScreen (){
