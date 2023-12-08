@@ -73,6 +73,12 @@ void mousePressed(){
     } else if (mouseX > 140 && mouseY > 65 && mouseX < 150 && mouseY < 90) {
       clickedPoison = true;
       printArray("oh no nyan!");
+      } else if (mouseX > 220 && mouseY > 60 && mouseX < 270 && mouseY < 90) {
+        c1.potionMixture = 4;
+        printArray("Keep mixing nyan~~!");
+      } else if (mouseX > 315 && mouseY > 40 && mouseX < 355 && mouseY < 90) {
+        c1.potionMixture = 3;
+        printArray("keep mixing nyan~~!");
       }
 }
 
