@@ -1,4 +1,4 @@
-class bubbles {
+class bubbles { //class
  //variables and PVectors
    PVector location;
   PVector velocity;

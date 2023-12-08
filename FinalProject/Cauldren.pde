@@ -18,20 +18,27 @@ class cauldren {
   
   fill(32, 32, 33);
   ellipse(200, 300, 300, 150);
-  //attempt 1 at trying to see if i can get the colour to change
-  if (potionMixture == 0) {
+  //switch used for cauldren water
+  switch(potionMixture) {
+    case 0:
     fill(water);
-  } else if (potionMixture == 1) {
+    break;
+    case 1:
     fill(red);
-  } else if (potionMixture == 2) {
+    break;
+    case 2:
     fill(green);
-  } else if (potionMixture == 3) {
+    break;
+    case 3: 
     fill(purple);
-  } else if (potionMixture == 4) {
+    break;
+    case 4:
     fill(orange);
+    break;
   }
   ellipse(200, 310, 280, 130);
   
+  //cat paws
   fill(0);
   circle(250, 235, 30);
   circle(320, 260, 30);

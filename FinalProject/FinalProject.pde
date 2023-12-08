@@ -1,3 +1,14 @@
+//////////////////////////////
+//// Mixing Potions Final ////
+////// Elizabeth Larkin //////
+///////// 991324130 //////////
+//////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
+// click on the potions to mix up something fun! Watch out for the poison! //
+/////////////////////////////////////////////////////////////////////////////
+
+
 //objects
 cauldren c1;
 cat cat1;
@@ -7,6 +18,7 @@ orangePotion op1;
 greenPotion gp1;
 purplePotion pp1;
 
+// boolean statement for start screen and gameover screen
 boolean clickedPoison = false;
 boolean gameStart = true;
 
@@ -14,8 +26,10 @@ boolean gameStart = true;
 //array for bubbles
 bubbles[] bubbles = new bubbles[8];
 
+//setUp
 void setup(){
   size(400, 400);
+  //modes
   rectMode(CORNER);
   
   //initalize classes
@@ -27,12 +41,13 @@ void setup(){
   pp1 = new purplePotion();
 
   //initialize the smoke bubbles array
-  for (int i = 0; i < bubbles.length; i++) {
+  for (int i = 0; i < bubbles.length; i++) { //increment
     bubbles[i] = new bubbles();
   }
 }
-
+//draw
 void draw(){
+  //background
   background(95, 77, 63);
   fill(59, 46, 32);
   rect(0, 90, 400, 15);
@@ -45,8 +60,6 @@ void draw(){
   line(90, 100, 0, 10);
   line(400, 10, 310, 100);
   noStroke();
-
-  
 
   //display objects
   cat1.display();
@@ -72,10 +85,10 @@ void draw(){
 }
 
 void mousePressed(){
-    if (mouseX > 35 && mouseY > 50 && mouseX < 80 && mouseY <90) {
+    if (mouseX > 35 && mouseY > 50 && mouseX < 80 && mouseY <90) { //logical
     c1.potionMixture = 1;
     printArray("Keep mixing nyan~~");
-    } else if (mouseX > 130 && mouseY > 65 && mouseX < 155 && mouseY < 90) {
+    } else if (mouseX > 130 && mouseY > 65 && mouseX < 155 && mouseY < 90) { //conditional
       clickedPoison = true;
       printArray("oh no nyan!");
       } else if (mouseX > 220 && mouseY > 60 && mouseX < 270 && mouseY < 90) {
