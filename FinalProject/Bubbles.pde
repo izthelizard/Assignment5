@@ -1,14 +1,22 @@
 class bubbles { //class
+
+////////////////////////////
+// floating smoke bubbles //
+////////////////////////////
+
  //variables and PVectors
    PVector location;
   PVector velocity;
+  
   //make it so the bubbles go UP the screen 
   float speed = random(-2, -0.5);
+  
   //bubbles refreshes and speed changed
   bubbles() {
    location = new PVector(random(-50, 450), -20);
    velocity = new PVector(0, speed);
   }
+  
   // refreshes the bubbles
   void update() {
     
@@ -20,6 +28,7 @@ class bubbles { //class
     }
     
   }
+  
   // apperance and makes the size fluctuate 
   void display(){
      fill(255, 255, 255, 20);

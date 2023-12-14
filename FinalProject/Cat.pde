@@ -1,4 +1,9 @@
 class cat {
+  
+  /////////////////////
+  // black kitty cat //
+  /////////////////////
+  
   //have it so eyes follow the mouse but stay in a little area
   float catEyeX = constrain(mouseX, 270, 290);
   float catEyeY = constrain(mouseY, 200, 220);

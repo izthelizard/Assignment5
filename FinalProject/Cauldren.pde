@@ -1,4 +1,9 @@
 class cauldren {
+  
+  /////////////////////////////////////////////
+  // cauldren with water that changes colour //
+  /////////////////////////////////////////////
+  
   //get water colour set up for changing
   color water = #A1DAEA;
   color red = #B91515;
@@ -8,16 +13,16 @@ class cauldren {
   
   int potionMixture = 0;
   
-  
+  // cauldren display
   void display(){
   rectMode(CORNER);
   noStroke();
   
   fill(45, 49, 54);
   rect(50, 300, 300, 400);
-  
   fill(32, 32, 33);
   ellipse(200, 300, 300, 150);
+  
   //switch used for cauldren water
   switch(potionMixture) {
     case 0:

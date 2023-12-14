@@ -8,48 +8,87 @@
 // click on the potions to mix up something fun! Watch out for the poison! //
 /////////////////////////////////////////////////////////////////////////////
 
+/////////////
+// objects //
+/////////////
 
-//objects
+// cauldren and water
 cauldren c1;
+// black cat
 cat cat1;
+// red potion bottle
 potions p1;
+// smoke floating in front of screen
 bubbles b1;
+// orange potion bottle
 orangePotion op1;
+// green potion bottle
 greenPotion gp1;
+// purple potion bottle
 purplePotion pp1;
+// sparks
+sparks s1;
 
-// boolean statement for start screen and gameover screen
+////////////////////////////////////////////////////////////
+// boolean statement for start screen and gameover screen //
+////////////////////////////////////////////////////////////
+
+// end screen off
 boolean clickedPoison = false;
+// start screen on by default
 boolean gameStart = true;
 
+//////////////////////////
+// array and array list //
+//////////////////////////
 
-//array for bubbles
+// array for bubbles
 bubbles[] bubbles = new bubbles[8];
+// arrayList
+ArrayList<sparks> light = new ArrayList<sparks>(20);
 
-//setUp
+
+
+/////////////////////////////////////////////
+// setup for size and initilizaing objects //
+/////////////////////////////////////////////
+
 void setup(){
   size(400, 400);
   //modes
   rectMode(CORNER);
   
-  //initalize classes
-    c1 = new cauldren();
+  // initalize classes
+  c1 = new cauldren();
   cat1 = new cat();
   p1 = new potions();
   op1 = new orangePotion();
   gp1 = new greenPotion();
   pp1 = new purplePotion();
+  
 
-  //initialize the smoke bubbles array
+  // initialize the smoke bubbles array
   for (int i = 0; i < bubbles.length; i++) { //increment
     bubbles[i] = new bubbles();
   }
-}
-//draw
+ 
+ 
+  
+  }
+  
+  
+ 
+
+
+//////////////////////////////////////////////////
+// draw for background and un interactive items //
+//////////////////////////////////////////////////
+
 void draw(){
-  //background
-  background(95, 77, 63);
+  // background
+  background(95, 77, 63); 
   fill(59, 46, 32);
+  // shelves and such
   rect(0, 90, 400, 15);
   rect(0, 120, 400, 5);
   stroke(59, 46, 32);
@@ -61,13 +100,17 @@ void draw(){
   line(400, 10, 310, 100);
   noStroke();
 
-  //display objects
-  cat1.display();
-  c1.display();
+
+
+  // display objects
   p1.display();
   op1.display();
   gp1.display();
   pp1.display();
+  cat1.display();
+  c1.display();
+  
+
  
   // draw and updates the smoke bubbles
   for (int i = 0; i < bubbles.length; i++) {
@@ -75,51 +118,76 @@ void draw(){
     bubbles[i].update();
   }
   
+  // starting screen display
   if (gameStart == true) {
     gameStartScreen();
   }
   
+  // gameover screen display
   if (clickedPoison == true){
     gameOverScreen();
   }
 }
 
+////////////////////////
+// mouse interactions //
+////////////////////////
+
+// mousepressed used for simple click and done
 void mousePressed(){
+  // clicking the red potion
     if (mouseX > 35 && mouseY > 50 && mouseX < 80 && mouseY <90) { //logical
     c1.potionMixture = 1;
-    printArray("Keep mixing nyan~~");
+    printArray("Keep mixing nyan~~"); 
+    // clicking the green potion = game over
     } else if (mouseX > 130 && mouseY > 65 && mouseX < 155 && mouseY < 90) { //conditional
       clickedPoison = true;
       printArray("oh no nyan!");
+      // return
+      return;
+      // orange potion
       } else if (mouseX > 220 && mouseY > 60 && mouseX < 270 && mouseY < 90) {
         c1.potionMixture = 4;
         printArray("Keep mixing nyan~~!");
+        // purple potion
       } else if (mouseX > 315 && mouseY > 40 && mouseX < 355 && mouseY < 90) {
         c1.potionMixture = 3;
         printArray("keep mixing nyan~~!");
       }
 }
 
+
+// mouseclicked for more permanent action
 void mouseClicked() {
+  // if the green potion is clicked
   if (clickedPoison == true) {
     if (mouseX > 150 && mouseY >230 && mouseX < 250 && mouseY < 320) {
+      // gameover 
       clickedPoison = false;
       c1.potionMixture = 0;
     } 
   }
+  // if the start button is clicked
     if (gameStart == true) {
       if (mouseX > 60 && mouseY > 220 && mouseX < 210 && mouseY < 290) {
+        // the start screen goes away
         gameStart = false;
       }
     }
   
 }
 
+////////////////////////
+// Start screen setup //
+////////////////////////
+
 void gameStartScreen(){
   rectMode(CORNER);
    noStroke();
+   // background
    background(72, 57, 45);
    fill(0);
+   // cat's face
    circle(310, 280, 80);
    ellipse(310, 390, 80, 180);
    triangle(330, 250, 270, 220, 270, 275);
@@ -133,6 +201,7 @@ void gameStartScreen(){
    fill(0);
    circle(295, 280, 20);
    circle(325, 287, 20);
+   // hat
    fill(130, 99, 147);
    quad(265, 250, 355, 290, 355, 190, 345, 170);
    triangle(355, 210, 380, 230, 345, 170);
@@ -141,6 +210,7 @@ void gameStartScreen(){
    line(250, 245, 370, 295);
    stroke(255);
    strokeWeight(1);
+   //mouth and wiskers
    line(280, 295, 255, 290);
    line(283, 300, 260, 302);
    line(335, 300, 360, 298);
@@ -149,19 +219,19 @@ void gameStartScreen(){
    line(300, 305, 305, 300);
    line(305, 300, 310, 305);
    line(310, 305, 315, 300);
-   
+   // tail
    noFill();
    stroke(0);
     strokeWeight(15);
     curve(600, 100, 270, 390, 230, 300, -30, 500);
    
-   noStroke();
-   
+   // text
+   noStroke(); 
    textSize(80);
    fill(255);
    text("MIXING", 75, 100);
    text("POTIONS", 40, 170);
-   
+   // start button
    fill(255);
    rect(55, 215, 160, 80);
    fill(130, 99, 147);
@@ -172,10 +242,15 @@ void gameStartScreen(){
    
 }
 
+///////////////////////////
+// gameover screen setup //
+///////////////////////////
+
 void gameOverScreen (){
    //background 
    rectMode(CORNER);
    noStroke();
+   // background to mimic the standard background but darker
    background(72, 57, 45);
   fill(39, 31, 22);
   rect(0, 90, 400, 15);
@@ -189,7 +264,7 @@ void gameOverScreen (){
   line(400, 10, 310, 100);
   noStroke();
  
-  //cat
+    // cat 
     fill(0);
     circle(300, 210, 100);
     fill(0);
@@ -207,7 +282,7 @@ void gameOverScreen (){
     line(285, 210, 260, 220);
     line(330, 210, 305, 215);
     line(305, 215, 320, 240);
-    //eyes
+    // eyes
     fill(0);
     
     stroke(0);
@@ -215,7 +290,7 @@ void gameOverScreen (){
     line(130, 270, 70, 180);
     noStroke();
     
-     //cauldren
+  // cauldren
   fill(45, 49, 54);
   rect(50, 300, 300, 400);
   
@@ -229,7 +304,7 @@ void gameOverScreen (){
   circle(250, 235, 30);
   circle(320, 260, 30);
     
-    //potions
+    // potions
     noStroke();
     fill(76, 157, 89);
     circle(145, 80, 20);
@@ -244,7 +319,7 @@ void gameOverScreen (){
     triangle(315, 90, 365, 90, 340, 45);
     quad(350, 65, 355, 80, 368, 70, 360, 60);
     
-    //cloud of smoke
+    // cloud of smoke
     fill(42, 42, 44, 80);
     circle(100, 100, 150+15*sin(frameCount*.03));
     circle(300, 320, 150+15*sin(frameCount*.03));
@@ -290,10 +365,12 @@ void gameOverScreen (){
     circle( 270, 250, 20+15*sin(frameCount*.03));
     circle(170, 45, 20+15*sin(frameCount*.03));
     
+    // restart text
     textSize(80);
     fill(255);
     text("Restart?", 70, 200);
     
+    // little white cat face
     fill(255);
     circle(200, 270, 50);
     triangle(195, 246, 170, 240, 175, 270);

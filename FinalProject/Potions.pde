@@ -1,5 +1,9 @@
 class potions {
   
+  ////////////////
+  // red potion //
+  ////////////////
+  
   void display() {
     rectMode(CORNER);
      fill(185, 21, 21);
